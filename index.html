@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookshelf Apps</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="head_bar">
+      <h2 class="head_bar_title">Bookshelf Apps</h2>
+      <div class="head_right">
+        <div class="search">
+          <input
+            type="search"
+            name="search"
+            id="search"
+            placeholder="Search..."
+            class="input"
+          />
+          <div href="#" class="btn_search">
+            <i class="fas fa-search"></i>
+          </div>
+        </div>
+        <div class="toggle-darkmode">
+          <span class="toggle-label">light</span>
+          <input type="checkbox" class="hidden" id="dark-toggle" />
+          <label for="dark-toggle" class="toggle-container">
+            <div class="toggle-circle"></div>
+          </label>
+          <span class="toggle-label">dark</span>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="input_section">
+        <h2>Masukkan Buku Baru</h2>
+        <form id="inputBook">
+          <table>
+            <tr>
+              <td>
+                <label for="inputBookTitle">Judul</label>
+              </td>
+              <td>:</td>
+              <td>
+                <input
+                  id="inputBookTitle"
+                  type="text"
+                  placeholder="Masukkan Judul"
+                  required
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="inputBookAuthor">Penulis</label>
+              </td>
+              <td>:</td>
+              <td>
+                <input
+                  id="inputBookAuthor"
+                  type="text"
+                  placeholder="Masukkan Penulis"
+                  required
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="inputBookYear">Tahun</label>
+              </td>
+              <td>:</td>
+              <td>
+                <input
+                  id="inputBookYear"
+                  min="1000"
+                  type="number"
+                  placeholder="Masukkan Tahun"
+                  required
+                />
+              </td>
+            </tr>
+            <tr>
+              <td colspan="3">
+                <input
+                id="isNotComplete"
+                  type="radio"
+                  name="inputBookIsComplete"
+                  value="false"
+                  checked
+                />
+                <label for="isNotComplete">Belum selesai dibaca</label>
+                <br />
+                <input
+                id="isComplete"
+                  type="radio"
+                  name="inputBookIsComplete"
+                  value="true"
+                />
+                <label for="isComplete">Selesai dibaca</label>
+              </td>
+            </tr>
+          </table>
+          <div class="buttonSubmit">
+            <button id="bookSubmit" type="submit">Masukan Buku</button>
+            <button type="reset">Reset</button>
+            <button type="button" id="cancelEdit" class="danger">Batal Edit</button>
+          </div>
+        </form>
+      </section>
+      <aside>
+        <section class="book_shelf">
+          <h2>Belum selesai dibaca</h2>
+          <div class="book_list_container">
+            <div id="incompleteBookshelfList" class="book_list">
+            </div>
+          </div>
+        </section>
+
+        <section class="book_shelf">
+          <h2>Selesai dibaca</h2>
+          <div class="book_list_container">
+            <div id="completeBookshelfList" class="book_list">
+            </div>
+          </div>
+        </section>
+      </aside>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
